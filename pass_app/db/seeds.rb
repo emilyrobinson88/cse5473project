@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+#
+# will be using web scraping probably eventually? but for now just this to show how password bank will work
+
+CommonPassword.create(password:'123456', rank:1)
+CommonPassword.create(password:'password', rank:2)
