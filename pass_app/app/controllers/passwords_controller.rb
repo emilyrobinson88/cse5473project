@@ -10,6 +10,9 @@ class PasswordsController < ApplicationController
 	end
 
 	def create
+		@password=Password.new(params[:password])
+		@password.save
+		redirect_to @password
 	end
 
 	def edit
