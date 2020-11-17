@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_20_064308) do
-
-  create_table "common_passwords", force: :cascade do |t|
-    t.string "password"
-    t.integer "rank"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_10_11_164830) do
 
   create_table "passwords", force: :cascade do |t|
     t.string "pass"

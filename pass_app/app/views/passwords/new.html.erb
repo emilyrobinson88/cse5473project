@@ -1,0 +1,12 @@
+<%= form_with(model: @password, local: true) do |form| %>
+
+
+  <div class="field">
+    <p> Enter a Password</p>
+    <%= form.text_field :pass %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Validate"%>
+  </div>
+<% end %>
