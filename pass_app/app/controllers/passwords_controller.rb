@@ -1,5 +1,5 @@
 class PasswordsController < ApplicationController
-
+before_action :set_password, only: [:show, :edit, :update, :destroy]
 	def index
 		@passwords=Password.all
 	end
@@ -14,18 +14,40 @@ class PasswordsController < ApplicationController
 
 	def create
 		@password=Password.new(allowed_params)
-		@password.save
-		redirect_to @password
+	  respond_to do |format|
+      if @password.save
+        format.html { redirect_to @password }
+        format.json { render :show, status: :created, location: @password }
+      else
+        format.html { render :new }
+        format.json { render json: @password.errors, status: :unprocessable_entity }
+      end
+    end
 	end
 
 	def edit
 		@password = Password.find(params[:id])
+		
 	end
 
 	def update
+		respond_to do |format|
+     		if @password.update(allowed_params)
+      	  		format.html { redirect_to @password }
+       	  		format.json { render :show, status: :ok, location: @password }
+      		else
+        		format.html { render :edit }
+        		format.json { render json: @password.errors, status: :unprocessable_entity }
+      		end
+    	end
 	end
 
 	def destroy
+		@password.destroy
+    	respond_to do |format|
+    	  format.html { redirect_to passwords_url, notice: 'password was successfully destroyed.' }
+     	  format.json { head :no_content }
+    end
 	end
   
  
