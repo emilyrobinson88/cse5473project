@@ -39,4 +39,12 @@ module PasswordsHelper
 		ret=  "this would take #{week} weeks to brute force this password"
 		return ret
 	end
+
+	def num(password)
+		v= bruteforce(password)
+		return v
+	end
+
 end
+
+

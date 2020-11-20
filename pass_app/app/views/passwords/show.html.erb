@@ -10,3 +10,10 @@
 <%= week(@password.pass)%>
 <br>
 <%= link_to 'go back', passwords_path %>
+<% if num(@password.pass) < 50 %>
+	<body style="background-color:red;">
+<% elsif num(@password.pass) < 5000 %> 
+	<body style="background-color:yellow;">
+<% else %> 
+	<body style="background-color:lightgreen;">
+<% end %>
