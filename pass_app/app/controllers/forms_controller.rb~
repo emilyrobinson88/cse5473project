@@ -1,0 +1,5 @@
+class FormsController < ApplicationController
+    def new 
+	puts `python3 lib/assets/python/PasswordAnalysis.py "#{input}"`
+    end
+end

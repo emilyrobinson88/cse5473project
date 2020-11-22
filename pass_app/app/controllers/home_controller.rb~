@@ -1,0 +1,7 @@
+class HomeController < ApplicationController
+    def index
+	puts 'hello3'
+	input = 'baadscaoefijea'
+	@response = `python3 app/assets/python/PasswordAnalysis.py abdef`
+    end
+end

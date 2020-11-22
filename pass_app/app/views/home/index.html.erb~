@@ -1,0 +1,9 @@
+<h1>Please enter your password below</h1>
+<%= form_for :forms do |f| %>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <%= puts 'hello 2' %>
+    <%= f.submit %>
+  <% end %>
+<h1><%= @response %></h1>
+</script>

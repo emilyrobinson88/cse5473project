@@ -9,7 +9,7 @@
 <br>
 <%= week(@password.pass)%>
 <br>
-<%= pass_strength(@password.pass)%>
+<%= pass_strength_simple(@password.pass)%>
 <br>
 <%= link_to 'go back', passwords_path %>
 <% if num(@password.pass) < 50 %>
