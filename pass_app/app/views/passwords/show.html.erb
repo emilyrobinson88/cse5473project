@@ -2,25 +2,32 @@
     <h1>Password Strength</h1>
      
 </div>
-
-<div class = "info">
-<br>
-<%= hour(@password.pass)%>
-<br>
-<%= day(@password.pass)%>
-<br>
-<%= week(@password.pass)%>
-<br>
-<%= pass_strength(@password.pass)%>
-<br>
-</div>
-<br>
- <div class="card show">
+<div class="card show">
 <%= render 'form', password: @password %>
 
 </div>
+
+<br>
+<div class = "info">
+	<%= hour(@password.pass)%>
+</div>
+<div class = "info">
+	<%= day(@password.pass)%>
+</div>
+<div class = "info">
+	<%= week(@password.pass)%>
+</div>
+
+<div class = "info">
+	<%= pass_strength(@password.pass)%>
+</div>
+
+<br>
+
+<br>
+ 
 <hr>
-<P>this will be the updaes that we should think that they shuold make</P>
+<P class = "info">this will be the updaes that we should think that they shuold make</P>
 
 <%= link_to 'go back', passwords_path %>
 <% if num(@password.pass) < 50 %>

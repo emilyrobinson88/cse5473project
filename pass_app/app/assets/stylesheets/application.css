@@ -19,13 +19,41 @@
   height: 200px;
 }
 
-.info {
-  text-align: center;
-}
+
 .header {
   background-color: #2D8CFF;
   color: white;
   padding: 3px 10px;
   margin-bottom: 50px;
   border-radius: 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+
+}
+
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  background-color:#2D8CFF; 
+  color:white;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.info {
+  background-color: #2D8CFF;
+  color: white;
+  padding: 3px 10px;
+  margin-bottom: 1px;
+  border-radius: 10px;
+  text-align: center;
 }

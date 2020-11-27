@@ -13,10 +13,26 @@
 
   <div class="field">
     <p> Enter a Password</p>
-    <%= form.text_field :pass %>
+    <%= form.password_field :pass, :value => @password.pass, :id=>"typepass"%>
+     <input type="checkbox" onclick="Toggle()"> 
   </div>
+
+
 
   <div class="actions">
     <%= form.submit "Validate"%>
   </div>
 <% end %>
+
+ <script> 
+    // Change the type of input to password or text 
+        function Toggle() { 
+            var temp = document.getElementById("typepass"); 
+            if (temp.type === "password") { 
+                temp.type = "text"; 
+            } 
+            else { 
+                temp.type = "password"; 
+            } 
+        } 
+</script> 
