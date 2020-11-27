@@ -45,9 +45,7 @@ table.children.each do |child|
         break
       end
     end
-    puts password
-    puts exposed
-    #CommonPassword.create(password:password, rank:exposed)
+    CommonPassword.create(password:password, rank:exposed)
 
   else
     first = false
