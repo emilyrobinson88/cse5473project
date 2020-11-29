@@ -27,7 +27,12 @@
 <br>
  
 <hr>
-<P class = "info">this will be the updaes that we should think that they shuold make</P>
+<P class = "info">
+	<%= compWithCommonDB(@password.pass)	%>
+</P>
+<P class = "info">
+	<%= compWithDB(@password)	%>
+</P>
 
 <%= link_to 'go back', passwords_path %>
 <% if num(@password.pass) < 50 %>

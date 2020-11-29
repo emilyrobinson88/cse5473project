@@ -148,6 +148,23 @@ module PasswordsHelper
 		return count
 	end
 
+	def compWithDB(password)
+		if (password.count >= 2)
+			return "This password has been entered to the site #{password.count} times already."
+		else
+			return "This is the first time this password has been entered to this site."
+		end
+	end
+
+	def compWithCommonDB(password)
+		commonPass = CommonPassword.find_by :password => password
+		if !commonPass.nil?
+			return "This password has been publicly exposed in at least #{commonPass.exposures} data leaks."
+		else
+			return "This password is not on the list of the 200 most commonly leaked passwords."
+		end
+	end
+
 	
 end
 
