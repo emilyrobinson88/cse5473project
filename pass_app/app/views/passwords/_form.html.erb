@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <p> Enter a Password</p>
+    <p> Enter your Password</p>
     <%= form.password_field :pass, :value => @password.pass, :id=>"typepass"%>
      <input type="checkbox" onclick="Toggle()"> 
   </div>
@@ -20,7 +20,7 @@
 
 
   <div class="actions">
-    <%= form.submit "Validate"%>
+  <%= form.submit "Validate", class: 'form-val' %>
   </div>
 <% end %>
 
