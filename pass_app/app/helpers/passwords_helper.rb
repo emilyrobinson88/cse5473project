@@ -49,6 +49,53 @@ module PasswordsHelper
 		return ret
 	end
 
+	def upCount(password)
+		up=password.count("A-Z")
+		if(up<=2)
+			return "Try adding more uppercase letters to your password"
+		else
+			return 3
+		end
+	end
+
+	def loCount(password)
+		lo=password.count("a-z")
+		if(lo<=2)
+			return "Try adding more lowercase letters to your password"
+		else
+			return 3
+		end
+	end
+
+	def numCount(password)
+		n=password.count("0-9")
+		if(n<=2)
+			return "Try adding more numbers to your password"
+
+		else
+			return 3
+		end
+	end
+
+	def symCount(password)
+		sy=password.count("!#$%&()*+,:;<=>?")
+		if(sy<=2)
+			return "Try adding more symbols to your password"
+		else
+			return 3
+		end
+	end
+
+	def lenCount(password)
+		len=password.length
+		if(len<9)
+			return "Try making your password longer"
+		else
+			return 3
+		end
+	end
+
+
 	def num(password)
 		v= bruteforce(password)
 		return v

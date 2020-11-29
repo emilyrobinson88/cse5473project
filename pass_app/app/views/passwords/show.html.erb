@@ -6,23 +6,49 @@
 <div class="card show">
 <%= render 'form', password: @password %>
 </div>
-		<% if num(@password.pass) < 50 %>
+		<% if num(@password.pass) < (10**12) %>
 		<div class = "card bad">
 		<ul class = "bad">
-			<h4>Tips for Password Security</h4>
+	<h4>Tips for Password Security</h4>
 			<li>Current Password Strength: <b>BAD</b></li>
-			<li>Increase password length greatly (Most Important)</li>
-			<li>Add more symbols, i.e: "!@#$%^&*"</li>
+			<% if upCount(@password.pass) !=3 %>
+				<li><%= upCount(@password.pass)%></li>
+			<% end %>
+			<% if loCount(@password.pass) !=3 %>
+				<li><%= loCount(@password.pass)%></li>
+			<% end %>
+			<% if symCount(@password.pass) !=3 %>
+				<li><%= symCount(@password.pass)%></li>
+			<% end %>
+			<% if numCount(@password.pass) !=3 %>
+				<li><%= numCount(@password.pass)%></li>
+			<% end %>
+			<% if lenCount(@password.pass) !=3 %>
+				<li><%= lenCount(@password.pass)%></li>
+			<% end %>
 			<li>Omit Personal Data, i.e: Birthday</li>
 		</ul>
 		</div>
-		<% elsif num(@password.pass) < 5000 %> 
+		<% elsif num(@password.pass) < (10**18) %> 
 		<div class = "card okay">
 		<ul class = "okay">
 			<h4>Tips for Password Security</h4>
 			<li>Current Password Strength: <b>OKAY</b></li>
-			<li>Increase password length (Most Important)</li>
-			<li>Add some more symbols, i.e: "!@#$%^&*"</li>
+			<% if upCount(@password.pass) !=3 %>
+				<li><%= upCount(@password.pass)%></li>
+			<% end %>
+			<% if loCount(@password.pass) !=3 %>
+				<li><%= loCount(@password.pass)%></li>
+			<% end %>
+			<% if symCount(@password.pass) !=3 %>
+				<li><%= symCount(@password.pass)%></li>
+			<% end %>
+			<% if numCount(@password.pass) !=3 %>
+				<li><%= numCount(@password.pass)%></li>
+			<% end %>
+			<% if lenCount(@password.pass) !=3 %>
+				<li><%= lenCount(@password.pass)%></li>
+			<% end %>
 			<li>Omit Personal Data, i.e: Last Name</li>
 		</ul>
 		</div>
@@ -31,8 +57,21 @@
 		<ul class = "great">
 			<h4>Tips for Password Security</h4>
 			<li>Current Password Strength: <b>GREAT</b></li>
-			<li>Possibly increase password length (Most Important)</li>
-			<li>Consider adding more symbols, i.e: "!@#$%^&*"</li>
+			<% if upCount(@password.pass) !=3 %>
+				<li><%= upCount(@password.pass)%></li>
+			<% end %>
+			<% if loCount(@password.pass) !=3 %>
+				<li><%= loCount(@password.pass)%></li>
+			<% end %>
+			<% if symCount(@password.pass) !=3 %>
+				<li><%= symCount(@password.pass)%></li>
+			<% end %>
+			<% if numCount(@password.pass) !=3 %>
+				<li><%= numCount(@password.pass)%></li>
+			<% end %>
+			<% if lenCount(@password.pass) !=3 %>
+				<li><%= lenCount(@password.pass)%></li>
+			<% end %>
 			<li>Omit Personal Data, i.e: Phone Number</li>
 		</ul>
 		</div>
