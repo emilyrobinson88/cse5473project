@@ -92,9 +92,9 @@
 			<td class = "easy-h"><%= hour(@password.pass)%></td>
 			<td class = "easy-h"><%= day(@password.pass)%></td>
 			<td class = "easy-h"><%= week(@password.pass)%></td>
-			<% if num(@password.pass) < 50 %>
+			<% if num(@password.pass) < (10**12) %> 
 				<td class = "easy-h", style = "background-color:red;"></td>
-			<% elsif num(@password.pass) < 5000 %> 
+			<% elsif num(@password.pass) < (10**18) %> 
 				<td class = "easy-h", style = "background-color: rgb(185, 185, 3);"></td>
 			<% else %> 
 				<td class = "easy-h", style = "background-color:green;"></td>
