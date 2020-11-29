@@ -1,0 +1,2 @@
+class CommonPassword < ApplicationRecord
+end
