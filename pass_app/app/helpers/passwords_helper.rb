@@ -26,17 +26,26 @@ module PasswordsHelper
 
 	def hour(password)
 		hour = bruteforce(password)
-		ret=  "this would take #{hour} hours to brute force this password"
+		ret = hour.round(5)
+		if ret == 0
+			return "Instant"
+		end
 		return ret
 	end
 	def day(password)
 		day = bruteforce(password)/24
-		ret=  "this would take #{day} days to brute force this password"
+		ret = day.round(5)
+		if ret == 0
+			return "Instant"
+		end
 		return ret
 	end
 	def week(password)
 		week = bruteforce(password)/(24*7)
-		ret=  "this would take #{week} weeks to brute force this password"
+		ret = week.round(5)
+		if ret == 0
+			return "Instant"
+		end
 		return ret
 	end
 
