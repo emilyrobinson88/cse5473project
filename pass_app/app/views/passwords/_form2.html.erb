@@ -1,0 +1,34 @@
+<%= form_with(model: password, local: true) do |form| %>
+  <% if password.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(password.errors.count, "error") %> prohibited this password from being saved:</h2>
+
+      <ul>
+        <% password.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p> The Password You Entered Was</p>
+    <%= form.password_field :pass, :value => @password.pass, :id=>"typepass"%>
+     <input type="checkbox" onclick="Toggle()"> 
+  </div>
+
+
+<% end %>
+
+ <script> 
+    // Change the type of input to password or text 
+        function Toggle() { 
+            var temp = document.getElementById("typepass"); 
+            if (temp.type === "password") { 
+                temp.type = "text"; 
+            } 
+            else { 
+                temp.type = "password"; 
+            } 
+        } 
+</script> 
