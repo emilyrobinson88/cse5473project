@@ -16,7 +16,6 @@ before_action :set_password, only: [:show, :edit, :update, :destroy]
 		@password = Password.find_by(allowed_params)
 		if !@password.nil?
 			puts "UPDATING COUNT"
-			#currCount = tempPass.read_attribute(:count)
 			currCount = @password[:count]
 			puts "count at: "
 			puts currCount
@@ -52,14 +51,16 @@ before_action :set_password, only: [:show, :edit, :update, :destroy]
 
 	def update	#TODO: need to edit so update changes count for pass, not pass for id
 		respond_to do |format|
-     		if @password.update(allowed_params)
-      	  		format.html { redirect_to @password }
-       	  		format.json { render :show, status: :ok, location: @password }
-      		else
-        		format.html { render :edit }
-        		format.json { render json: @password.errors, status: :unprocessable_entity }
-      		end
-    	end
+			puts allowed_params
+
+			if @password.update(allowed_params)
+				format.html { redirect_to @password }
+				format.json { render :show, status: :ok, location: @password }
+			else
+				format.html { render :edit }
+				format.json { render json: @password.errors, status: :unprocessable_entity }
+			end
+		end
 	end
 
 	def destroy

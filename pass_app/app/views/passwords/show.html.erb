@@ -11,6 +11,8 @@
 		<ul class = "bad">
 	<h4>Tips for Password Security</h4>
 			<li>Current Password Strength: <b>BAD</b></li>
+			<li> <%= compWithCommonDB(@password.pass)	%></li>
+			<li><%= compWithDB(@password)	%></li>
 			<% if upCount(@password.pass) !=3 %>
 				<li><%= upCount(@password.pass)%></li>
 			<% end %>
@@ -34,6 +36,8 @@
 		<ul class = "okay">
 			<h4>Tips for Password Security</h4>
 			<li>Current Password Strength: <b>OKAY</b></li>
+			<li> <%= compWithCommonDB(@password.pass)	%></li>
+			<li><%= compWithDB(@password)	%></li>
 			<% if upCount(@password.pass) !=3 %>
 				<li><%= upCount(@password.pass)%></li>
 			<% end %>
@@ -57,6 +61,8 @@
 		<ul class = "great">
 			<h4>Tips for Password Security</h4>
 			<li>Current Password Strength: <b>GREAT</b></li>
+			<li> <%= compWithCommonDB(@password.pass)	%></li>
+			<li><%= compWithDB(@password)	%></li>
 			<% if upCount(@password.pass) !=3 %>
 				<li><%= upCount(@password.pass)%></li>
 			<% end %>
@@ -118,39 +124,6 @@
 	</div>
 </div>
 
-<br>
-<div class = "info">
-	<%= hour(@password.pass)%>
-</div>
-<div class = "info">
-	<%= day(@password.pass)%>
-</div>
-<div class = "info">
-	<%= week(@password.pass)%>
-</div>
-
-<div class = "info">
-	<%= pass_strength(@password.pass)%>
-</div>
-
-<br>
-
-<br>
-
 <hr>
-#added this comment
-<P class = "info">
-	<%= compWithCommonDB(@password.pass)	%>
-</P>
-<P class = "info">
-	<%= compWithDB(@password)	%>
-</P>
 
 <%= link_to 'Back', passwords_path %>
-<% if num(@password.pass) < 50 %>
-	<body style="background-color:red;">
-<% elsif num(@password.pass) < 5000 %> 
-	<body style="background-color:yellow;">
-<% else %> 
-	<body style="background-color:lightgreen;">
-<% end %>
