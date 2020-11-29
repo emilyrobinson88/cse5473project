@@ -7,14 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 #
-# will be using web scraping probably eventually? but for now just this to show how password bank will work
 
 require 'json'
 require 'mechanize'
+#reset password database
 
-#CommonPassword.create(password:'123456', rank:1)
-#CommonPassword.create(password:'password', rank:2)
-
+# common password seed
 agent = Mechanize.new
 html_loc = File.dirname(__FILE__)
 html_loc = html_loc + "/../Cache"
@@ -45,7 +43,7 @@ table.children.each do |child|
         break
       end
     end
-    CommonPassword.create(password:password, rank:exposed)
+    CommonPassword.create(password:password, exposures:exposed)
 
   else
     first = false
