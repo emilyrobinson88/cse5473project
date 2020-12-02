@@ -6,7 +6,7 @@
 <div class="card show">
 <%= render 'form2', password: @password %>
 </div>
-		<% if num(@password.pass) < (10**12) %>
+		<% if pass_strength(@password.pass) < (10**12) %>
 		<div class = "card bad">
 		<ul class = "bad">
 	<h4>Tips for Password Security</h4>
@@ -31,7 +31,7 @@
 			<li>Omit Personal Data, i.e: Birthday</li>
 		</ul>
 		</div>
-		<% elsif num(@password.pass) < (10**18) %> 
+		<% elsif pass_strength(@password.pass) < (10**18) %> 
 		<div class = "card okay">
 		<ul class = "okay">
 			<h4>Tips for Password Security</h4>
@@ -98,9 +98,9 @@
 			<td class = "easy-h"><%= hour(@password.pass)%></td>
 			<td class = "easy-h"><%= day(@password.pass)%></td>
 			<td class = "easy-h"><%= week(@password.pass)%></td>
-			<% if num(@password.pass) < (10**12) %>
+			<% if pass_strength(@password.pass) < (10**12) %>
 				<td class = "easy-h", style = "background-color:red;"></td>
-			<% elsif num(@password.pass) < (10**18) %>
+			<% elsif pass_strength(@password.pass) < (10**18) %>
 				<td class = "easy-h", style = "background-color: rgb(185, 185, 3);"></td>
 			<% else %> 
 				<td class = "easy-h", style = "background-color:green;"></td>
