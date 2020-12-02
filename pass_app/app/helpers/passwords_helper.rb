@@ -219,9 +219,32 @@ module PasswordsHelper
 		else
 			return "This password is not on the list of the 200 most commonly leaked passwords."
 		end
-	end
+  end
 
-	
+
+  def topTenSubmittedPasswords
+    sql = "SELECT pass FROM passwords ORDER BY count DESC LIMIT 10"
+    ttsp = ActiveRecord::Base.connection.execute(sql)
+		retVal = ttsp
+		for i in 0..9
+			if i < ttsp.length
+				retVal[i] = ttsp[i]["pass"]
+			else
+				retVal[i] = ""
+			end
+		end
+		return retVal
+  end
+
+  def topTenCommonPasswords
+    sql = "SELECT password FROM common_passwords ORDER BY exposures DESC LIMIT 10"
+    ttsp = ActiveRecord::Base.connection.execute(sql)
+		retVal = ttsp
+		for i in 0..9
+			retVal[i] = ttsp[i]["password"]
+		end
+		return ttsp
+  end
 end
 
 

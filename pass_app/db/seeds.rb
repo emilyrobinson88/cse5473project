@@ -43,7 +43,9 @@ table.children.each do |child|
         break
       end
     end
-    CommonPassword.create(password:password, exposures:exposed)
+    if CommonPassword.find_by(password: password).nil?
+      CommonPassword.create(password:password, exposures:exposed)
+    end
 
   else
     first = false

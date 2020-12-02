@@ -2,25 +2,6 @@
     <h1>How Strong is my Password</h1>     
 </div>
 <%= link_to 'Test Your Pasword', new_password_path %>
-<table>
-  <thead>
-    <tr>
-      <th>Words</th>
-      <th colspan="3">This will leave</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @passwords.each do |password| %>
-      <tr>
-        <td><%= password.pass %></td>
-        <td><%= link_to 'Show', password %></td>
-        <td><%= link_to 'Edit', edit_password_path(password) %></td>
-        <td><%= link_to 'Destroy', password, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 <br>
@@ -31,45 +12,47 @@
     <th>Top Passwords we have found</th>
   </tr>
   </thead>
+  <%= topSubmitted = topTenSubmittedPasswords()%>
+  <%= topCommon = topTenCommonPasswords() %>
   <tr>
-    <td>1. 123456</td>
-    <td>1. We</td>
+    <td>1. <%=topCommon[0] %></td>
+    <td>1. <%=topSubmitted[0] %></td>
   </tr>
   <tr>
-    <td>2. 123456789</td>
-    <td>2. need </td>
+    <td>2. <%=topCommon[1] %></td>
+    <td>2. <%=topSubmitted[1] %> </td>
   </tr>
   <tr>
-    <td>3. picture1</td>
-    <td>3. to </td>
+    <td>3. <%=topCommon[2] %></td>
+    <td>3. <%=topSubmitted[2] %> </td>
   </tr>
   <tr>
-    <td>4. password</td>
-    <td>4. figure</td>
+    <td>4. <%=topCommon[3] %></td>
+    <td>4. <%=topSubmitted[3] %></td>
   </tr>
   <tr>
-    <td>5. 12345678</td>
-    <td>5. out</td>
+    <td>5. <%=topCommon[4] %></td>
+    <td>5. <%=topSubmitted[4] %></td>
   </tr>
   <tr>
-    <td>6. 111111</td>
-    <td>6. how to</td>
+    <td>6. <%=topCommon[5] %></td>
+    <td>6. <%=topSubmitted[5] %></td>
   </tr>
   <tr>
-    <td>7. 123123</td>
-    <td>7. pull this</td>
+    <td>7. <%=topCommon[6] %></td>
+    <td>7. <%=topSubmitted[6] %></td>
   </tr>
   <tr>
-    <td>8. 12345</td>
-    <td>8. from</td>
+    <td>8. <%=topCommon[7] %></td>
+    <td>8. <%=topSubmitted[7] %></td>
   </tr>
   <tr>
-    <td>9. 1234567890</td>
-    <td>9. our</td>
+    <td>9. <%=topCommon[8] %></td>
+    <td>9. <%=topSubmitted[8] %></td>
   </tr>
   <tr>
-    <td>10. senha</td>
-    <td>10. data</td>
+    <td>10. <%=topCommon[9] %></td>
+    <td>10. <%=topSubmitted[9] %></td>
   </tr>
 </table> 
 

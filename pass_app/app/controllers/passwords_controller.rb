@@ -15,10 +15,7 @@ before_action :set_password, only: [:show, :edit, :update, :destroy]
 	def create
 		@password = Password.find_by(allowed_params)
 		if !@password.nil?
-			puts "UPDATING COUNT"
 			currCount = @password[:count]
-			puts "count at: "
-			puts currCount
 			@password.update(:count => currCount + 1)
 			respond_to do |format|
 				if @password.save
@@ -49,7 +46,7 @@ before_action :set_password, only: [:show, :edit, :update, :destroy]
 		
 	end
 
-	def update	#TODO: need to edit so update changes count for pass, not pass for id
+	def update
 		respond_to do |format|
 			puts allowed_params
 
