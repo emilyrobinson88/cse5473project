@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_070223) do
+ActiveRecord::Schema.define(version: 2020_12_03_021006) do
 
   create_table "common_passwords", force: :cascade do |t|
     t.string "password"
     t.integer "exposures"
+  end
+
+  create_table "ip_addresses", force: :cascade do |t|
+    t.string "ipa"
+    t.string "password"
   end
 
   create_table "passwords", force: :cascade do |t|

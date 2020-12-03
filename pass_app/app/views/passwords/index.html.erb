@@ -1,7 +1,7 @@
 <div class="header">
     <h1>How Strong is my Password</h1>     
 </div>
-<%= link_to 'Test Your Pasword', new_password_path %>
+<%= link_to 'Test Your Password', new_password_path %>
 
 <br>
 <br>
@@ -12,8 +12,8 @@
     <th>Top Passwords we have found</th>
   </tr>
   </thead>
-  <%= topSubmitted = topTenSubmittedPasswords()%>
-  <%= topCommon = topTenCommonPasswords() %>
+  <%= topSubmitted = topTenSubmittedPasswords%>
+  <%= topCommon = topTenCommonPasswords%>
   <tr>
     <td>1. <%=topCommon[0] %></td>
     <td>1. <%=topSubmitted[0] %></td>

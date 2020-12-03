@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
- # get 'home/index'
- # post 'home/index' => 'forms/new'
+  resources :ip_addresses
+  # post 'home/index' => 'forms/new'
  # resources :forms
 
 #  root 'home#index'

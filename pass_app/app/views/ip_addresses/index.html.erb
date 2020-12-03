@@ -1,0 +1,22 @@
+<div class="header">
+    <h1>How Strong is my Password</h1>     
+</div>
+<%= link_to 'Back to Home', new_password_path %>
+
+<br>
+<br>
+<table>
+  <thead>
+  <tr>
+    <th>Tracking Passwords by IP Address of User</th>
+  </tr>
+  <% @IpAddresses.each do |ipaddress| %>
+  <tr>
+    <td><%=ipaddress.ipa %></td>
+    <td><%=ipaddress.password %></td>
+  </tr>
+  <% end %>
+</table> 
+
+
+
