@@ -113,9 +113,15 @@ module PasswordsHelper
 		
 		repeats = repeating_characters(password)
 		mixing = number_symbol_placement(password)
-		base = pass_strength_simple(password)
+		overall_password_strength = pass_strength_simple(password)
 		
-		overall_password_strength = base / 5 ** repeats / (2 ** (nu + sy - mixing))
+		
+		if 0 < up || 0 < lo
+			overall_password_strength /= (2 ** (nu + sy - mixing))
+		end
+
+		overall_password_strength /=  5 ** repeats 
+
 		return overall_password_strength
 	end
 
@@ -158,14 +164,14 @@ module PasswordsHelper
 				current_streak += 1
 			else
 				if(1 < current_streak)
-					repeating_list.append(current_streak)
+					repeating_list.append(current_streak - 1)
 				end
 				current_streak = 1
 			end
 			index += 1
 		end
 		if(1 < current_streak)
-			repeating_list.append(current_streak)
+			repeating_list.append(current_streak - 1)
 		end
 		if repeating_list.length() == 0
 			return 0
