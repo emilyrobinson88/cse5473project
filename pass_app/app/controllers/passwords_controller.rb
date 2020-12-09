@@ -10,18 +10,20 @@ before_action :set_password, only: [:show, :edit, :update, :destroy]
 
 	def new
 		@password=Password.new(:count => 1)
+		#ip = request.remote_ip
+		#IpAddress.new(:ipa => ip, :password => @password.pass)
+		@ipaddress= IpAddress.new
 		@password.save
-		ip = request.remote_ip
-		IpAddress.new(:ipa => ip, :password => @password.pass)
+		@ipaddress.save
 	end
 
 	def create
 		@password = Password.find_by(allowed_params)
-		ip = request.remote_ip
+		#ip = request.remote_ip
 		if !@password.nil?
 			currCount = @password[:count]
 			@password.update(:count => currCount + 1)
-			IpAddress.new(:ipa => ip, :password => @password.pass)
+			#@ipaddress= IpAddress.new
 			respond_to do |format|
 				if @password.save
 					format.html { redirect_to @password }
@@ -34,7 +36,7 @@ before_action :set_password, only: [:show, :edit, :update, :destroy]
 		else
 			@password=Password.new(allowed_params)
 			@password.update(:count => 1)
-			IpAddress.new(:ipa => ip, :password => @password.pass)
+			#@ipaddress= IpAddress.new
 			respond_to do |format|
 				if @password.save
 					format.html { redirect_to @password }
@@ -86,7 +88,7 @@ before_action :set_password, only: [:show, :edit, :update, :destroy]
 
     # Only allow a list of trusted parameters through.
     def allowed_params
-      params.require(:password).permit(:pass)
+      params.require(:password).permit(:pass, ipaddress_attributes: [:ipa,:password])
     end
 
 
