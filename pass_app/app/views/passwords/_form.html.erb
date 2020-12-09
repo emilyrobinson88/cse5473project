@@ -20,11 +20,7 @@
 
 
  
- <%= fields_for @ip_address, IpAddress.new do |ipaddress_attributes| %>
-      <%=ipaddress_attributes.label request.remote_ip%>
-     
-      <%= ipaddress_attributes.text_field :ipa%>
-   <% end %>
+
  <div class="actions">
   <%= form.submit "Validate", class: 'form-val' %>
   </div>
