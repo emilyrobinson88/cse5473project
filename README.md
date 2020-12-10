@@ -21,6 +21,15 @@
 -	IP Address
     + Index.html
       - Shows the list of the ip addresses that were entered and the password that was entered into the database
+# Controllers
+-   Passwords
+    + passwords_controller.rb
+      - Contains basic functions for creation and viewing of passwords
+      - If a password is entered and it is a new, unique password, this creates the password and corresponding IP address entry and sets the password count to 1
+      - If a password is entered and it is not unique, this increments the password count and creates a new IP address entry
+-   IP Addresses
+    + ip_addresses_controller.rb
+      - Contains basic functions for creation and viewing of IP addresses
 # Database
 -	Schema
     + common_passwords
