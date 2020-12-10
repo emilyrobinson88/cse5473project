@@ -21,9 +21,19 @@
 -	IP Address
     + Index.html
       - Shows the list of the ip addresses that were entered and the password that was entered into the database
-# Data
--	Password
-    + The data was scraped from NordPass's most common password list
+# Database
+-	Schema
+    + common_passwords
+      - Common passwords is a table containing the most common passwords and the number of exposures for each common password
+    + ip_addresses
+      - IP Adresses is a table containing each IP Address/Password pair submitted so far
+    + passwords
+      - Passwords is a table containing all of the passwords entered thus far and how many times they were entered
+-   Seeds
+    + seeds.rb
+      - Contains a webscraper created using Mechanize which scrapes NordPass's most common password list
+    + Most common passwords of 2020.html
+      - NordPass's most common password list page HTML, used by webscraper to populate common passwords database
 # Helpers
 -   Password
     + passwords_helper.rb
