@@ -26,7 +26,7 @@
     + passwords_controller.rb
       - Contains basic functions for creation and viewing of passwords
       - If a password is entered and it is a new, unique password, this creates the password and corresponding IP address entry and sets the password count to 1
-      - If a password is entered and it is not unique, this increments the password count and creates a new IP address entry
+      - If a password is entered and it is not unique, this increments the password count and creates a new IP address entry with that password
 -   IP Addresses
     + ip_addresses_controller.rb
       - Contains basic functions for creation and viewing of IP addresses
@@ -42,7 +42,7 @@
     + seeds.rb
       - Contains a webscraper created using Mechanize which scrapes NordPass's most common password list
     + Most common passwords of 2020.html
-      - NordPass's most common password list page HTML, used by webscraper to populate common passwords database
+      - NordPass's most common password list page HTML, created by webscraper to populate common passwords database and cached for easier access upon setup
 # Helpers
 -   Password
     + passwords_helper.rb
@@ -50,4 +50,9 @@
       - Contains code for comparing with database/currently stored passwords
       - Contains code which retrieves the most common passwords to be displayed on index
 # How to Operate
-- /passwords
+- In a command line terminal, run:
+    $ bundle install
+    $ rails db:setup
+    $ rails server
+- Open a web browser (firefox recommended) and navigate to localhost:3000/passwords
+- From there, follow links to navigate the website
