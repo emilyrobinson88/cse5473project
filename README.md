@@ -1,12 +1,12 @@
 # cse5473project
 
-#Deployed at
-#Models
+# Deployed at
+# Models
 -	Password
     +	Has the form to evaluate how strong a password is
 -	IP Address
     + Has the values for IP addresses and passwords that the user has entered
-#Views
+# Views
 -	Password
     + Index.html
       - Shows the list of the most common passwords in 2020 and the most common passwords that have been entered into the database
@@ -17,8 +17,8 @@
 -	IP Address
     + Index.html
       - Shows the list of the ip addresses that were entered and the password that was entered into the database
-#Data
+# Data
 -	Password
     + The data was scraped from … 
-#How to Operate
+# How to Operate
 - /passwords
