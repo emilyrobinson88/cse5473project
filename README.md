@@ -1,4 +1,8 @@
 # cse5473project
+-  Coltin Clark
+-  Leah Gillespie
+-  Jimmy McElwain
+-  Emily Robinson
 
 # Deployed at
 # Models
