@@ -50,10 +50,14 @@
       - Contains code for comparing with database/currently stored passwords
       - Contains code which retrieves the most common passwords to be displayed on index
 # How to Operate
-- In a command line terminal, run:
-    $ bundle install
-    $ rails db:setup
-    $ rails server
-- Open a web browser (firefox recommended) and navigate to localhost:3000/passwords
-- From there, follow links to navigate the website
-- To see the list of IP Addresses go to localhost:3000/ip_addresses
+- Working Version:
+    + In a command line terminal, run:
+        - $ bundle install
+        - $ rails db:setup
+        - $ rails server
+    + Open a web browser (firefox recommended) and navigate to localhost:3000/passwords
+    + From there, follow links to navigate the website
+    + To see the list of IP Addresses go to localhost:3000/ip_addresses
+- Deployed Version:
+    + Open a web browser and go to https://ancient-earth-28833.herokuapp.com/passwords
+    + To see the list of passwords and the IP addresses they came from, instead go to https://ancient-earth-28833.herokuapp.com/ip_addresses
