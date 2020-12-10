@@ -23,6 +23,12 @@
       - Shows the list of the ip addresses that were entered and the password that was entered into the database
 # Data
 -	Password
-    + The data was scraped from … 
+    + The data was scraped from NordPass's most common password list
+# Helpers
+-   Password
+    + passwords_helper.rb
+      - Contains all of the code for the password strength algorithm
+      - Contains code for comparing with database/currently stored passwords
+      - Contains code which retrieves the most common passwords to be displayed on index
 # How to Operate
 - /passwords
