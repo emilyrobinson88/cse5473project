@@ -56,3 +56,4 @@
     $ rails server
 - Open a web browser (firefox recommended) and navigate to localhost:3000/passwords
 - From there, follow links to navigate the website
+- To see the list of IP Addresses go to localhost:3000/ip_addresses
