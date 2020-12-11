@@ -5,6 +5,7 @@
 -  Emily Robinson
 
 # Deployed at
+-   https://ancient-earth-28833.herokuapp.com/passwords
 # Models
 -	Password
     +	Has the form to evaluate how strong a password is
