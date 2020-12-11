@@ -61,3 +61,18 @@
 - Deployed Version:
     + Open a web browser and go to https://ancient-earth-28833.herokuapp.com/passwords
     + To see the list of passwords and the IP addresses they came from, instead go to https://ancient-earth-28833.herokuapp.com/ip_addresses
+    
+# Troubleshooting:
+- Working Version:
+    + If your Ruby version on your local machine is not Ruby 2.6.3
+        - Go into the Gemfile and change the Ruby version from 2.6.3 to the version of Ruby on your local machine
+            - ie    ruby '2.6.3'    =>      ruby '2.6.6'
+        - In your terminal, type rbenv local 'x.x.x'
+            - ie    'rbenv local 2.6.6'
+    + If your yarn packages are out of date, follow the instructions in your terminal to update
+        - ie    'yarn install --check-files'
+    + The first time navigating to localhost:3000/passwords there is an error screen
+        - Run pending migration
+    + After running the pending migrations, you are getting an error about function [] of nil class
+        - Go to terminal and run 'rails db:setup'
+            
